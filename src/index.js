@@ -2,14 +2,21 @@ import React, { useState } from 'react';
 
 import ReactDOM from 'react-dom';
 
-import CarouselComponent from "./components/CarouselComponent.js"
-import Avatar from "./components/Avatar.js"
-import Description from "./components/Description.js"
-import Progress from "./components/Progress.js"
+
 import './index.css';
 import './assets/css/bootstrap.min.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import getRandomColor from "./assets/utils.js";
+
+//IMPORT COMPONENT
+
+import CarouselComponent from "./components/CarouselComponent.js";
+import Avatar from "./components/Avatar.js";
+import Description from "./components/Description.js";
+import Progress from "./components/Progress.js";
+import RandomColorRec from "./components/RandomColorRec.js";
+import RandomColorRecList from "./components/RandomColorRecList.js";
 
 import { 
   Image,
@@ -17,31 +24,13 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-// function MyComponentOne (props){
-//   return (
-//     <div>
-//       This is my component one {props.name}
-//     </div>
-//   )
-// }
-// function MyComponentTwo (){
-//   return (
-//     <div>
-//       This is my component two
-//       <MyComponentOne name="Gay"></MyComponentOne>
-//     </div>
-//   )
-// }
 
 
 function Index(){
+  var [color,setColor] = useState() 
   return(
       <>
-      {/* <CarouselComponent/> */}
-      <br/>
-      <br/>
-      <br/>
-      <Container>
+      {/* <Container>
       <Row className="justify-content-md-center">
         <Col xs={4} md={4}>
         <Avatar/>
@@ -55,12 +44,19 @@ function Index(){
           <Progress/>
         </Col>
       </Row>
+      </Container> */}
+      <Container>
+        <Row>
+          <Col style={{display:"flex",justifyContent: "center"}}>
+            <h2>Hey, color guessing app!</h2>
 
-
+          </Col>
+        </Row>
+        <Row>
+          <RandomColorRecList amount={5}/>
+        </Row>
       </Container>
-
-
-
+      
       </>
   )
 }
