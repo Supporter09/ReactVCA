@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import ReactDOM from 'react-dom';
 
 
 import './index.css';
 import './assets/css/bootstrap.min.css'
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import getRandomColor from "./assets/utils.js";
+// import getRandomColor from "./assets/utils.js";
 
 //IMPORT COMPONENT
 
-import CarouselComponent from "./components/CarouselComponent.js";
-import Avatar from "./components/Avatar.js";
-import Description from "./components/Description.js";
-import Progress from "./components/Progress.js";
-import RandomColorRec from "./components/RandomColorRec.js";
+// import CarouselComponent from "./components/CarouselComponent.js";
+// import Avatar from "./components/Avatar.js";
+// import Description from "./components/Description.js";
+// import Progress from "./components/Progress.js";
+// import RandomColorRec from "./components/RandomColorRec.js";
 import RandomColorRecList from "./components/RandomColorRecList.js";
 
 import { 
@@ -27,7 +27,6 @@ import {
 
 
 function Index(){
-  var [color,setColor] = useState() 
   return(
       <>
       {/* <Container>
@@ -52,9 +51,9 @@ function Index(){
 
           </Col>
         </Row>
-        <Row>
-          <RandomColorRecList amount={5}/>
-        </Row>
+        
+        <RandomColorRecList amount={5}/>
+        
       </Container>
       
       </>

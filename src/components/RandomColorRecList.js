@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import RandomColorRec from './RandomColorRec';
 // import getRandomColor from "../assets/utils.js"
 
-import { 
-    Image,
-    Container,
-    Row,
+import {
+    Row, 
     Col
   } from 'react-bootstrap';
   
@@ -32,61 +30,46 @@ function RandomColorRecList(props){
     
     var [colorArray,setColorArr] = useState(randomColorArr(props.amount));
     var [correctColor,setCorrectColor] = useState(colorArray[randomNum(props.amount)]); 
-    console.log("correct color outside: ",correctColor)
-    // function changeColorRecState(){
-    //     console.log("run function changeColor");
-    //     console.log('inside func correctColor',correctColor);
-    //     var colorRecArr = [];
-    //     // console.log("this is a before color array",colorRecArr)
-    //     for (var i = 0; i < colorArray.length;i++){
-    //         colorRecArr.push(
-    //             <Col>
-    //                 <RandomColorRec color={colorArray[i]} key_value={i} handler={handleOnClick} correctColor = {correctColor} />
-    //             </Col>
-    //         )
-    //     }
-    //     // console.log("this is a after color array",colorRecArr)
-    //     return colorRecArr;
-    // }
+    // console.log("correct color outside: ",correctColor)
     function handleOnClick(){  
         // var randomRec =  Math.round(Math.random() * props.amount);
-        console.log("run");
+        // console.log("run");
         let random_arr = randomColorArr(props.amount);
         setColorArr(random_arr);
         // console.log(colorArray);
         // var ran_num = Math.round(Math.random() * 5)
-        console.log("color array in method :",random_arr)
+        // console.log("color array in method :",random_arr)
         setCorrectColor(random_arr[randomNum(5)]);
-        // console.log(correctColor);
-        // setColorRecArr(changeColorRecState());
     }
-    // console.log(colorArray)
-    // console.log(correctColor)
-    
-    // let current_array = changeColorRecState()  
-    // var [randomColorRecArray,setColorRecArr] = useState(current_array);
-    // console.log(correctColor);
-    // console.log(randomColorRecArray)
     
     
     
     return(
         <>
-        <Col>
-            <RandomColorRec color={colorArray[0]} key={0} handler={handleOnClick} correctColor = {correctColor} />
-        </Col>
-        <Col>
-            <RandomColorRec color={colorArray[1]} key={1} handler={handleOnClick} correctColor = {correctColor} />
-        </Col>
-        <Col>
-            <RandomColorRec color={colorArray[2]} key={2} handler={handleOnClick} correctColor = {correctColor} />
-        </Col>
-        <Col>
-            <RandomColorRec color={colorArray[3]} key={3} handler={handleOnClick} correctColor = {correctColor} />
-        </Col>
-        <Col>
-            <RandomColorRec color={colorArray[4]} key={4} handler={handleOnClick} correctColor = {correctColor} />
-        </Col>
+        <Row>
+            <Col style={{display:"flex",justifyContent: "center"}}>
+                <h5 style={{color:"#2a9d8f"}}>CORRECT COLOR: {correctColor}</h5>
+            </Col>
+        </Row>
+        
+        <Row>
+            <Col>
+                <RandomColorRec color={colorArray[0]} key={0} handler={handleOnClick} correctColor = {correctColor} />
+            </Col>
+            <Col>
+                <RandomColorRec color={colorArray[1]} key={1} handler={handleOnClick} correctColor = {correctColor} />
+            </Col>
+            <Col>
+                <RandomColorRec color={colorArray[2]} key={2} handler={handleOnClick} correctColor = {correctColor} />
+            </Col>
+            <Col>
+                <RandomColorRec color={colorArray[3]} key={3} handler={handleOnClick} correctColor = {correctColor} />
+            </Col>
+            <Col>
+                <RandomColorRec color={colorArray[4]} key={4} handler={handleOnClick} correctColor = {correctColor} />
+            </Col>       
+        </Row>
+        
         </>
     )
 }

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import getRandomColor from "../assets/utils.js"
 
 function RandomColorRec(props){
     // const [color, setColor] = useState(getRandomColor());
     function handleOnclick(){
         if(props.color === props.correctColor){
-            console.log('props data',props.color);
-            console.log('props data',props.correctColor);
+            // console.log('props data',props.color);
+            // console.log('props data',props.correctColor);
             props.handler();
         }
         // props.handler();
